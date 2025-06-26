@@ -8,10 +8,12 @@ import authRoutes from './routes/auth.js';
 dotenv.config();
 const app = express();
 
-app.use(cors({
-  origin: 'http://localhost:5173',
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: "https://authentication-xi-ashy.vercel.app/",
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(session({
   secret: process.env.SESSION_SECRET,
